@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body), sans-serif;
+    background-color: var(--light-main);
+    color: var(--dark-main);
+}
+
+:root {
+    --color-green: #4a6741;
+    --color-earth: #1f1001;
+    --color-wood: #c2a693;
+    --color-cream: #f5f0e8;
+    --color-gold: #ffcc53;
+    --dark-main: #111;
+    --light-main:  #fff;
+
+    --font-body: 'Jost';
+
+
+    /* Spacing 
+    This means:
+        Never smaller than 3rem (mobile)
+        Ideally 8vw — 8% of the viewport width, so it grows naturally
+        Never larger than 8rem (wide desktop)
+    */
+    --section-padding: clamp(3rem, 8vw, 8rem);
+
+    --max-width: 1200px;
+    /* Transitions
+    A transition variable is just a shorthand string you   
+     reuse everywhere so all hover effects feel consistent: */
+
+    --transitions-base: 150ms ease;
+}
