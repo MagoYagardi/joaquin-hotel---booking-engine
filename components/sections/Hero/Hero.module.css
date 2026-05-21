@@ -1,0 +1,97 @@
+.hero {
+    position: relative;
+    max-width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero video {   
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: brightness(0.7);
+
+}
+
+.hero .textCnt {
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    color: var(--light-main);
+}
+
+.hero .textCnt h2 {
+    color: var(--light-main);
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 1px;}
+
+.hero .textCnt hr {
+    margin: 2rem 0;
+    opacity: 1;
+    background-color: var(--light-main);
+    height: 2px;
+
+}
+  
+.hero .textCnt h3 {
+    color: var(--light-main);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.hero .arrow {
+    margin-top: 40px;
+    animation: bounce 1.5s ease-in-out infinite;
+
+}
+
+.hero .whatsappCta {
+    border-radius: 50PX;
+    padding: 15px;
+    background-color: 	#25D366;
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit;        /* Hereda el color del texto del padre */
+    cursor: pointer;       /* Asegura que aparezca la mano al pasar el mouse */
+    outline: none;  
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 40px;
+    color: var(--light-main);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.3rem;
+    transition: var(--transition-faster);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .35);
+}
+
+.hero .whatsappCta:hover {
+    background-color: var(--light-main);
+    color:#25D366;
+}
+
+
+

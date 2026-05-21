@@ -1,13 +1,23 @@
+'use client'
 import Header from '../components/layout/Header/Header'
+import Hero from '../components/sections/Hero/Hero'
+import BookingWidget from '../components/ui/BookingWidget'
+import {useState} from 'react'
+
 
 
 export default function Home() {
+const [isBookingOpen,setBookingOpen] = useState(false)
+
+
+
     return (
         <>
-            <Header></Header>
+            <Header handleReservar={() => setBookingOpen(!isBookingOpen)}></Header>
+            {isBookingOpen &&(<BookingWidget></BookingWidget> )}
             <main>
-                <video autoPlay muted loop style={{ top:'0', left:'0', position:'absolute', width: '100%', filter: 'brightness(0.7)', }} src="images/upscaled-video.mp4"></video>
-                <p  style={{margin: '1000px 0', }}>hola</p>
+                <Hero></Hero>
+                <p style={{marginBottom: '1000px;'}}>hola</p>
             </main>
         </>
     )

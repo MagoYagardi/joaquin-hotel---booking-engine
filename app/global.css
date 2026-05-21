@@ -16,7 +16,11 @@ body {
 
 :root {
     --color-green: #4a6741;
+        --color-green-rgb: 74, 103, 65;
+
     --color-earth: #1f1001;
+        --color-earth-rgb: 31, 16, 1;
+
     --color-wood: #c2a693;
     --color-cream: #f5f0e8;
     --color-gold: #ffcc53;
@@ -39,5 +43,6 @@ body {
     A transition variable is just a shorthand string you   
      reuse everywhere so all hover effects feel consistent: */
 
-    --transitions-base: 150ms ease;
+    --transitions-base: 0.5s ease;
+    --transition-faster: .3s ease;
 }

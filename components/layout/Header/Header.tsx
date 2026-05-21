@@ -19,10 +19,15 @@ const navItems: NavItem[] = [
 ]
 
 const navBooking: NavItem =
-    { label: 'TARIFAS', href: 'https://www.donjoaquin.com/tarifas-reservas.php', external: true }
+    { label: 'RESERVAR', href: 'null', external: true }
 
+    
 
-export default function Header() {
+type HeaderProps = {
+    handleReservar: () => void;
+}
+
+export default function Header({handleReservar}: HeaderProps) {
     //states
     const [isOpen, setIsOpen] = useState(false)
 
@@ -32,7 +37,7 @@ export default function Header() {
             <img src={isOpen ? "/images/logo_black.png" : "/images/logo_white.png"} alt="logo" />
 
             <div className={styles.navRight}>
-                <a href={navBooking.href} target="_blank" rel="noopener noreferrer"> {navBooking.label}</a>
+                <a onClick={handleReservar}  target="_blank" rel="noopener noreferrer"> {navBooking.label}</a>
                 <button onClick={() => setIsOpen(!isOpen)} aria-label="Abrir menú" className={styles.hamburgerMenu}>
                         {!isOpen &&(
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"  strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
