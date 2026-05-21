@@ -1,6 +1,7 @@
 'use client'
 import { useState,} from 'react'
 import styles from './Header.module.css'
+import BookingWidget from '../../ui/BookingWidget'
 
 //ts types defys
 type NavItem = {
@@ -18,18 +19,11 @@ const navItems: NavItem[] = [
     { label: 'BLOG', href: 'https://blog.donjoaquin.com/es/', external: true }
 ]
 
-const navBooking: NavItem =
-    { label: 'RESERVAR', href: 'null', external: true }
 
-    
-
-type HeaderProps = {
-    handleReservar: () => void;
-}
-
-export default function Header({handleReservar}: HeaderProps) {
+export default function Header() {
     //states
     const [isOpen, setIsOpen] = useState(false)
+    const [isWidgetOpen, setWidgetOpen] = useState(false)
 
 
     return (
@@ -37,7 +31,9 @@ export default function Header({handleReservar}: HeaderProps) {
             <img src={isOpen ? "/images/logo_black.png" : "/images/logo_white.png"} alt="logo" />
 
             <div className={styles.navRight}>
-                <a onClick={handleReservar}  target="_blank" rel="noopener noreferrer"> {navBooking.label}</a>
+                <button onClick={() => setWidgetOpen(!isWidgetOpen)} className={styles.reservarBtn}>
+                    RESERVAR
+                </button>
                 <button onClick={() => setIsOpen(!isOpen)} aria-label="Abrir menú" className={styles.hamburgerMenu}>
                         {!isOpen &&(
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"  strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
@@ -71,6 +67,9 @@ export default function Header({handleReservar}: HeaderProps) {
                         ))}
                     </ul>
                 </div>
+
+                {isWidgetOpen &&(<BookingWidget></BookingWidget> )}
+
         </nav>
     )
 }

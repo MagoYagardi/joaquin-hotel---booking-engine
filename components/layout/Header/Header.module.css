@@ -40,6 +40,7 @@
 }
 
 .nav button {
+  cursor: pointer;
   background-color: var(--light-main);
   padding: 5px;
   border-radius: 0;
@@ -64,31 +65,33 @@
     color: var(--light-main);
 }
 
-.navRight a {
-  display: flex;
-  align-items: center;
+.navRight .reservarBtn  {
+  border: none;
+  font-weight: 500;
+  width: fit-content; 
   font-size: 1rem;
   padding: .5rem 1.5rem;
   height: 50px;
-  background-color: var(--light-main);
   color: var(--dark-main);
-  line-height: 20px;
   transition: background-color var(--transitions-base), color var(--transition-faster);
+  font-family: var(--font-body);
+
 }
 
-.navRight a:hover {
+
+.navRight .reservarBtn:hover {
     background-color: var(--dark-main);
     color: var(--light-main);
 
 }
 
-.navOpen .navRight a {
+.navOpen .navRight .reservarBtn {
     box-shadow: inset 0 0 0 1px var(--dark-main); 
     color: var(--light-main);
     background-color: var(--dark-main);
 }
 
-.navOpen .navRight a:hover {
+.navOpen .navRight .reservarBtn:hover {
     background-color: var(--light-main);
     color: var(--dark-main);
 }
