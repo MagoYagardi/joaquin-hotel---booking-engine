@@ -4,7 +4,7 @@ import { useState } from 'react'
 import 'react-day-picker/dist/style.css'
 
 export default function BookingWidget () {
-const [selected, setSelected] = useState(['']);
+        const [range, setRange] = useState({ from: undefined, to: undefined })
 
     return (
         <article className={styles.widgetWrap}>
@@ -35,9 +35,10 @@ const [selected, setSelected] = useState(['']);
                 </label>
                 {/* calendario */}
                 <DayPicker
-                    mode='single'
-                    selected={selected}
-                    onSelect={setSelected}
+                    mode='range'
+                    selected={range} 
+                    onSelect={setRange}
+                    excludeDisabled
                 ></DayPicker>
 
 
