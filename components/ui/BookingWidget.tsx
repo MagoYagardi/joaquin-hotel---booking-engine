@@ -3,11 +3,17 @@ import { DayPicker } from  'react-day-picker'
 import { useState } from 'react'
 import 'react-day-picker/dist/style.css'
 
-export default function BookingWidget () {
-        const [range, setRange] = useState({ from: undefined, to: undefined })
 
+
+type WidgetProps = {
+    isWidgetOpen: boolean;
+}
+
+export default function BookingWidget ({isWidgetOpen} : WidgetProps ) {
+        const [range, setRange] = useState({ from: undefined, to: undefined })
+        console.log(isWidgetOpen);
     return (
-        <article className={styles.widgetWrap}>
+        <article className={`${styles.widgetWrap} ${isWidgetOpen ? styles.visible : ''}`}>
             <div>
                 <h1>Selecciona Destino & Fecha</h1>
 

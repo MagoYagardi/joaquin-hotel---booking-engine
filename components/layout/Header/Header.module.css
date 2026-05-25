@@ -102,14 +102,13 @@
   flex: 100% 0 0;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out ;
+  transition: max-height 0.5s ease-in-out .5s;
 }
 
 
 /* menu on open */
 .openedMenu.visible {
   max-height: 500px; /* large enough to fit all links */
-  
 }
 
 
@@ -123,6 +122,7 @@
   width: fit-content;
   transform: translateY(-500px);
   transition: transform .4s ease-in-out;
+  
 }
 
 .openedMenu.visible ul {
@@ -149,5 +149,22 @@
 .openedMenu a:hover::after {
     transform: scaleX(1);
 }
+
+/* sytles when widget is open */
+
+
+.widget {
+  flex: 100% 0 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease-in-out;
+}
+
+
+.widget.visible {
+  max-height: 1000px; /* large enough to fit all links */
+  transition: max-height 0.6s ease-in-out 1s;
+}
+
 
 
