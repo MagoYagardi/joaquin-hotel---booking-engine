@@ -14,3 +14,22 @@
 .widgetWrap.visible {
   transform: translateY(0);
 }
+
+
+.widgetWrap a { 
+  width: 100%;   
+  display: block;
+  padding: 8px;
+}
+
+
+.widgetWrap a::after {
+    content: '';
+    display: block;
+    width: 110%;
+    margin: 2px -5% ;
+    height: 2px;
+    background: var(--dark-main);
+    transition: transform 0.5s ease-in-out;
+    transform: scaleX(0);
+}

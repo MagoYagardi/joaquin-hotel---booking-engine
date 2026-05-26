@@ -25,6 +25,33 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isWidgetOpen, setWidgetOpen] = useState(false);
 
+
+    function handleMenuOpen() {
+        if(isWidgetOpen) {
+            setWidgetOpen(false)
+            setTimeout(() => {
+                setIsOpen(!isOpen)
+            }, 300);
+        } else {
+            setWidgetOpen(false)
+            setIsOpen(!isOpen)
+        }
+    }
+
+    function handleWidgetOpen() {
+        
+        if (isOpen) {
+            setIsOpen(false)
+        setTimeout(() => {
+            setWidgetOpen(!isWidgetOpen)
+        }, 300)
+        } else {
+        setIsOpen(false)
+        setWidgetOpen(!isWidgetOpen)     
+        }
+    }
+
+
   return (
     <nav
       className={`${styles.nav} ${isOpen || isWidgetOpen ? styles.navOpen : ""} `}
@@ -40,10 +67,7 @@ export default function Header() {
 
       <div className={styles.navRight}>
         <button
-          onClick={() =>{ 
-            setIsOpen(false)
-            setWidgetOpen(!isWidgetOpen)
-            }}
+          onClick={() => handleWidgetOpen()}
           className={styles.reservarBtn}
         >
           {isWidgetOpen && <svg
@@ -65,9 +89,7 @@ export default function Header() {
 
 
         <button
-          onClick={() =>{
-          setWidgetOpen(false);
-          setIsOpen(!isOpen) }}
+          onClick={() => handleMenuOpen()}
           aria-label="Abrir menú"
           className={styles.hamburgerMenu}
         >
